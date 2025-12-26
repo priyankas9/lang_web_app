@@ -382,7 +382,7 @@ Developed By: Innovative Solution Pvt. Ltd. (ISPL)   -->
                     <li class="nav-item">
                         <a href="{{ action('Fsm\NsdSettingController@index') }}" class="nav-link {{ request()->is('fsm/nsd-setting','fsm/nsd-setting/*') ? 'active' : '' }}">
                         <i class="nav-icon fa-solid fa-gear "style="font-size: 14px;"></i>
-                            <p>NSD Integration Setting</p>
+                            <p>{{__('NSD Integration Setting')}}</p>
                         </a>
                     </li>
                     @endcan
@@ -617,6 +617,7 @@ Developed By: Innovative Solution Pvt. Ltd. (ISPL)   -->
             @endif
 
             </ul>
+             @endif
         </nav>
 
     </div>
