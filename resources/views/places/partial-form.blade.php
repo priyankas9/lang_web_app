@@ -178,7 +178,11 @@
             return new ol.View(options);
         }
         // URL of GeoServer Legends
-        var gurl_legend = gurl_wms + "?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&BBOX=89.1281,23.502, 89.2068,23.5892&LAYER=";
+        var gurl_legend =
+                gurl_wms +
+                "?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0" +
+                "&FORMAT=image/png&WIDTH=20&HEIGHT=20" +
+                "&BBOX=89.1281,23.502,89.2068,23.5892&LAYER=";
 
         var WARD_NUMBERS = <?php echo json_encode(array_values($wards)); ?>;
 
@@ -370,7 +374,7 @@
                 return;
             }
 
-            var wfsBase = gurl_wfs.replace(/([^:])\/{2,}/g, '$1/');
+            var wfsBase = gurl_wfs;
             var wfsUrl = wfsBase
                 + '?service=WFS'
                 + '&version=2.0.0'
